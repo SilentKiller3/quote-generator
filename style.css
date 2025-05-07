@@ -1,0 +1,150 @@
+/* ----------------------------------
+   THEME COLOR VARIABLES
+---------------------------------- */
+:root {
+  /* Light Theme Colors */
+  --bg-color: #fef9f8; /* Page background */
+  --text-color: #2c3e50; /* Main text color */
+  --accent-color: #ff6f61; /* Accent color used in headings/borders */
+  --box-bg: #ffffff; /* Background for quote box */
+  --btn-bg: #ff6f61; /* Button background */
+  --btn-text: #fff; /* Button text color */
+  --btn-hover: #ff3b2e; /* Button hover color */
+}
+
+body.dark {
+  /* Dark Theme Colors (overrides root variables) */
+  --bg-color: #1e1e2f;
+  --text-color: #f0f0f0;
+  --accent-color: #64ffda;
+  --box-bg: #2e2e3e;
+  --btn-bg: #64ffda;
+  --btn-text: #000;
+  --btn-hover: #26c6da;
+}
+
+/* ----------------------------------
+   GLOBAL STYLES
+---------------------------------- */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-color); /* Dynamic background color */
+  color: var(--text-color); /* Dynamic text color */
+  transition: background-color 0.4s ease, color 0.4s ease; /* Smooth theme transition */
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Heading style */
+h1 {
+  color: var(--accent-color);
+}
+
+/* ----------------------------------
+   QUOTE BOX STYLING
+---------------------------------- */
+.quote-box {
+  background-color: var(--box-bg);
+  border: 2px solid var(--accent-color);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+#quoteText {
+  font-size: 1.5rem;
+}
+
+#quoteAuthor {
+  display: block;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* ----------------------------------
+   CONTROL SECTION (select, toggle, font size)
+---------------------------------- */
+.controls {
+  display: flex; /* ✅ Fixed typo: was "fle" */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Shared styles for select, checkbox and font buttons */
+select,
+input[type="checkbox"],
+.font-controls button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+/* Category dropdown */
+select {
+  background-color: var(--box-bg);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+}
+
+/* Font size buttons */
+.font-controls button {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  cursor: pointer;
+}
+
+.font-controls button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Dark mode toggle switch wrapper */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ----------------------------------
+   NAVIGATION BUTTONS
+---------------------------------- */
+.buttons button {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.buttons button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* ----------------------------------
+   RESPONSIVE STYLES (Mobile view)
+---------------------------------- */
+@media (max-width: 500px) {
+  .controls {
+    flex-direction: column; /* Stack controls vertically */
+    gap: 10px;
+  }
+
+  .quote-box {
+    font-size: 1rem; /* Smaller quote text on small screens */
+  }
+}

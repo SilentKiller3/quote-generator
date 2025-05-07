@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page Title -->
+    <title>Quote Generator</title>
+
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="container">
+      <h1>Quote Generator</h1>
+
+      <!-- Controls: Category selection, theme switch, font size -->
+      <div class="controls">
+
+        <!-- Dropdown for selecting quote category -->
+        <select id="categorySelect" title="Select a category">
+          <option value="all">All</option>
+          <option value="science">Science</option>
+          <option value="motivation">Motivation</option>
+        </select>
+
+        <!-- Theme toggle switch for light/dark mode -->
+        <div class="theme-toggle">
+          <label for="themeSwitch">Dark Mode</label>
+          <input type="checkbox" id="themeSwitch" />
+        </div>
+
+        <!-- Font size control buttons -->
+        <div class="font-controls">
+          <button id="decreaseFont">size -</button>
+          <button id="increaseFont">size +</button>
+        </div>
+      </div>
+
+      <!-- Quote display area -->
+      <div class="quote-box" id="quoteBox">
+        <p id="quoteText">Loading...</p>
+        <!-- Quote text will be inserted here -->
+        <span id="quoteAuthor"></span>
+        <!-- Quote author will be inserted here -->
+      </div>
+
+      <!-- Navigation buttons for quotes -->
+      <div class="buttons">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+        <button id="randomBtn">Random</button>
+      </div>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script src="script.js"></script>
+  </body>
+</html>
